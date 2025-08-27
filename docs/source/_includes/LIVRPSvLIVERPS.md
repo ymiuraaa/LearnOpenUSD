@@ -1,0 +1,3 @@
+```{admonition} A Note About LIVERPS vs LIVRPS
+OpenUSD recently introduced a new composition arc called "**relocates**," which is now included in the strength ordering acronym. What was previously known as **LIVRPS** is now **LIVERPS**, with the "E" representing rElocates. Learn OpenUSD will be updated soon to cover relocates, but for now, please note that you may see both LIVRPS and LIVERPS used interchangeably.
+```
