@@ -11,7 +11,7 @@ Model hierarchy (also known as *kind* metadata) offers a separate, higher-level 
 
 Model hierarchy is designed to prune traversal at a relatively shallow point in the scenegraph. Without it, traversal passes through all prims in your scene, which can be costly. This pruning point is the **component** model boundary. All ancestral prims of component models (when correctly grouped) are part of the model hierarchy, while all descendants are not. 
 
-Let’s talk about two of the specific model kinds, **components** and **assemblies**. This is a refresher of what we discussed in [*Learn OpenUSD: Understanding Model Kinds*](https://learn.nvidia.com/courses/course-detail?course_id=course-v1:DLI+S-OV-22+V1).
+Let’s talk about two of the specific model kinds, **components** and **assemblies**. This is a refresher of what we discussed in [*Learn OpenUSD: Understanding Model Kinds*](../../beyond-basics/model-kinds.md).
 
 ---
 
