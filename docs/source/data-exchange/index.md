@@ -32,7 +32,14 @@ data-transformation/index
 
 ## Prerequisites
 
-Completion of all modules in the [Learn OpenUSD: Foundations](https://www.nvidia.com/en-us/learn/learning-path/openusd/) curriculum.
+Completion of all lessons in:
+
+- [Setting the Stage](../stage-setting/index.md)
+- [Scene Description Blueprints](../scene-description-blueprints/index.md)
+- [Composition Basics](../composition-basics/index.md)
+- [Beyond Basics](../beyond-basics/index.md)
+- [Creating Composition Arcs](../creating-composition-arcs/index.md)
+- [Asset Structure Principles and Content Aggregation](../asset-structure/index.md)
 
 An understanding of fundamental programming concepts in Python 3 such as functions, loops, dictionaries and arrays and Python 3 related libraries. Understanding of OpenUSD concepts and basic OpenUSD API’s.
 
