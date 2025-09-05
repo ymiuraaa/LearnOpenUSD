@@ -34,6 +34,8 @@ from sphinx.transforms import SphinxTransform
 from sphinx.util.docutils import SphinxDirective
 from sphinx.application import Sphinx
 
+from sphinxcontrib.doxylink.doxylink import Entry
+
 from myst_nb.sphinx_ import SphinxNbRenderer
 from myst_parser.mdit_to_docutils.base import token_line
 
@@ -57,7 +59,7 @@ extensions = [
 
 templates_path = ['_templates']
 exclude_patterns = ['_includes/**']
-myst_enable_extensions = ["colon_fence", 'html_image', 'attrs_inline']
+myst_enable_extensions = ['colon_fence', 'html_image', 'attrs_inline', 'attrs_block']
 myst_title_to_header = True
 myst_number_code_blocks = ['python', 'py', 'usda', 'usd']
 nb_number_source_lines = True
@@ -216,10 +218,21 @@ def create_exercises_archives(app, exception):
                         zip_file.write(file, file.relative_to(exercises.parent))
             print(f"Created {zip_file_path}")
 
-
+def monkey_patch_doxylink(app: Sphinx):
+    try:
+        new_entries = []
+        for entry in app.env.doxylink_cache['usdcpp']['mapping']._entries:
+            if entry.kind == "class":
+                new_entry = Entry(name=f"{entry.name} Details", kind="anchor", file=f"{entry.file}#details", arglist=None)
+                new_entries.append(new_entry)
+        app.env.doxylink_cache['usdcpp']['mapping']._entries.extend(new_entries)
+        app.env.doxylink_cache['usdcpp']['mapping']._entries.sort()
+    except Exception as e:
+        print(f"Warning: Failed to patch doxylink entries: {e}")
 def setup(app):
     # Wait for the builder to be initialized
     app.connect('builder-inited', setup_translators)
+    app.connect('builder-inited', monkey_patch_doxylink)
     app.connect('build-finished', create_exercises_archives)
     app.connect('build-finished', copy_asset_folders)
     
