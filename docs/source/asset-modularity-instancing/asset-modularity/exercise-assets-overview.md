@@ -1,6 +1,6 @@
 # Exercise: Assets Overview
 
-In this exercise, we will explore and get familiar with the assets that will be used in this course.
+In this exercise, we will explore and get familiar with the assets that will be used in this module.
 
 1. **Run** in the terminal:
 ```powershell
