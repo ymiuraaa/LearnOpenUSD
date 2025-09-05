@@ -2,7 +2,7 @@
 
 In this lesson, we'll explore the concept of kinds in OpenUSD.
 
-## What are Model Kinds?
+## What Are Model Kinds?
 ![Kind Definition](../images/foundations/Kind_Definition.webm)
 
 Model kinds are a piece of metadata that provide a way to organize and categorize different

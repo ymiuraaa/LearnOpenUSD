@@ -27,7 +27,7 @@ kernelspec:
 ---
 # Active and Inactive Prims
 
-## What are Active and Inactive Prims?
+## What Are Active and Inactive Prims?
 
 ![](../images/foundations/ActiveInactive_Definition.webm)
 

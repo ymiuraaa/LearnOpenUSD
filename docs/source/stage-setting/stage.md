@@ -33,7 +33,7 @@ Welcome to this lesson on OpenUSD stages, a core element in 3D scene description
 In this lesson, we will:
 * Define the role of stages in 3D scene description.
 
-## What is a Stage?
+## What Is a Stage?
 
 At its core, an OpenUSD stage presents the scenegraph, which dictates what is in our scene. It is the hierarchy of objects, called prims. These prims can be anything from geometry, to materials, to lights and other organizational elements. This scene is commonly stored in a data structure of connected nodes, which is why we refer to it as the scenegraph.
 

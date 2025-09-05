@@ -27,7 +27,7 @@ jupytext:
 
 # Relationships
 
-## What is a Relationship?
+## What Is a Relationship?
 Relationships establish connections between prims, acting as pointers or links between objects in the scene hierarchy. A relationship allows a prim to target
 or reference other prims, attributes, or even other relationships. This establishes dependencies between scenegraph objects.
 

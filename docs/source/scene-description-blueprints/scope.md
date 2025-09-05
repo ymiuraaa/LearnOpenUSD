@@ -29,7 +29,7 @@ kernelspec:
 
 Understanding Scopes is important as they help in organizing and managing complexity in large-scale 3D scenes.
 
-## What is a Scope?
+## What Is a Scope?
 
 In OpenUSD, a Scope is a special type of prim that is used primarily as a grouping mechanism in the scenegraph. It does not represent any geometry or renderable content itself but acts as a container for organizing other prims. Think of Scope as an empty folder on your computer where you organize files; similarly, Scope helps in structuring and organizing prims within a USD scene.
 

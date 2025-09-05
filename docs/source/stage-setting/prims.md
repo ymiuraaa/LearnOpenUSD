@@ -31,7 +31,7 @@ Welcome to this lesson on OpenUSD prims. In this lesson, we will:
 
 * Identify the role of prims, including what a prim is and its role within a OpenUSD stage.
 
-## What is a Prim?
+## What Is a Prim?
 
 Primitives, or prims for short, are the building blocks of any OpenUSD scene, making understanding them essential for anyone working with 3D content creation and manipulation in the OpenUSD ecosystem.
 

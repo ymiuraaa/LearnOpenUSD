@@ -27,7 +27,7 @@ jupytext:
 
 # Attributes
 
-## What is an Attribute?
+## What Is an Attribute?
 
 ```{kaltura} 1_u0uzffig
 ```

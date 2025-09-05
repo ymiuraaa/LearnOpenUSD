@@ -1,6 +1,6 @@
 # Specifiers
 
-## What are Specifiers?
+## What Are Specifiers?
 
 Specifiers in OpenUSD convey the intent for how a prim or a primSpec should be interpreted in the composed scene. The specifier can be one of three values: `def`, `over` or `class`.
 

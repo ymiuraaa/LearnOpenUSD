@@ -27,7 +27,7 @@ jupytext:
 
 # Stage Traversal
 
-## What is Stage Traversal?
+## What Is Stage Traversal?
 
 Stage traversal is the process of traversing the scenegraph of a stage with the purpose of querying or editing the scene data. We can traverse the scenegraph by iterating through child prims, accessing parent prims, and traversing the hierarchy to find specific prims of interest.
 

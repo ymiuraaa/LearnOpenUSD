@@ -2,7 +2,7 @@
 
 In this lesson, we'll explore Hydra, a powerful rendering architecture within OpenUSD. Understanding Hydra enables efficient and flexible rendering of complex 3D scenes.
 
-## What is Hydra?
+## What Is Hydra?
 
 ```{kaltura} 1_aggsw6zi
 ```

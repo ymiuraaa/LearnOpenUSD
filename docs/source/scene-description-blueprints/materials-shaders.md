@@ -28,7 +28,7 @@ kernelspec:
 ---
 # Materials and Shaders
 
-## What is a Material?
+## What Is a Material?
 
 ### How Does It Work?
 

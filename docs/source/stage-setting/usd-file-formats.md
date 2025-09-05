@@ -5,23 +5,23 @@ In this lesson, we'll explore the core OpenUSD file formats – USD, USDA, USDC 
 ```{kaltura} 1_dl84ev5g
 ```
 
-## What is USDA?
+## What Is USDA?
 
 USDA (`.usda`) are ASCII text files that encode scene descriptions in a format that can easily be read and edited. It is a native file format used by OpenUSD to store and exchange 3D scene data. It is human-readable, which makes USDA particularly useful for tasks that involve manual editing or inspection of
 scene data. This makes USDA optimal for small files, such as a stage that is referencing external content.
 
-## What is USDC?
+## What Is USDC?
 
 The Crate Binary Format, or USDC (`.usdc`), is a compressed binary file format used by OpenUSD to store and exchange 3D scene data. It is designed to minimize load time and provide a more efficient representation of the scene data compared to the human-readable ASCII format (USDA).
 
 The Crate Binary Format uses various compression techniques to reduce the file size and improve loading performance. It also employs memory mapping for faster file access and loading times. The structure of the file is organized in a way that allows for efficient parsing and retrieval of the scene data. USDC is extremely efficient for numerically-heavy data, like geometry.
 
-## What is USD?
+## What Is USD?
 
 A USD (`.usd`) file can be either ASCII or binary – the advantage of which is that we can change the underlying format at any point without breaking references. Using USD is also beneficial for debugging, because an asset that is in binary can easily be changed to ASCII to take a look at what might be causing the issue. As we learn more about USD, we may decide to separate
 heavier data from more light weight data. When doing so, consider using `.usdc` and `.usda` explicitly to avoid obfuscation and create large `.usda` files unintentionally.
 
-## What is USDZ?
+## What Is USDZ?
 
 Let’s also touch on USDZ (`.usdz`). USDZ is an atomic, uncompressed, zipped archive so that we can deliver all of the necessary assets together. We would not use USDZ if we are still making edits to the asset, but it is a great way to package and ship our asset when it is complete. For example, a mesh with
 its texture files can be delivered as one archive. It’s generally intended as read-only and is optimal for XR experiences. More on USDZ will be covered in future lessons.

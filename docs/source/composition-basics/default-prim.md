@@ -29,7 +29,7 @@ kernelspec:
 
 In this lesson, we’ll explore the concept of default prims in Universal Scene Description. Default prims are essential for scene management, especially when dealing with complex hierarchies and references. By the end of this lesson, we’ll understand what default prims are, why they are important, and how to set them using Python.
 
-## What is a Default Prim?
+## What Is a Default Prim?
 
 ![Default Prim Definition](../images/foundations/DefaultPrim_Definition.webm)
 A default prim in OpenUSD is a top-level prim, or primitive, that is part of the layer metadata and serves as the primary entry point or root for a stage. Ihelps other parts of the system know where to start or what to focus on.

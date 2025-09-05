@@ -2,7 +2,7 @@
 
 In this lesson, we're talking about a few commonly used USD modules that are a great place to start for OpenUSD development. 
 
-## What are the Core USD Modules?
+## What Are the Core USD Modules?
 The USD code repository is made up of four core packages: `base`, `usd`, `imaging`, and `usdImaging`. To author and read USD data, you only need the `base `and `usd` packages. We will focus on modules found in these two packages.
 
 ```{kaltura} 1_n2oh1grs

@@ -28,7 +28,7 @@ jupytext:
 # Metadata
 
 
-## What is Metadata?
+## What Is Metadata?
 ![Metadata Definition](../images/foundations/Metadata_Definition.webm)
 
 Metadata in OpenUSD refers to a set of name-value pairs that provide additional, non-animatable information attached to prims or their properties. The concept is similar to properties, but it allows us to add custom information or annotations to scene description elements via a dictionary without modifying the underlying schema or data model.

@@ -28,7 +28,7 @@ kernelspec:
 ---
 # Variant Sets Basics
 
-## What are Variant Sets?
+## What Are Variant Sets?
 
 ### How Does It Work?
 

@@ -27,7 +27,7 @@ kernelspec:
 ---
 # XformCommonAPI
 
-## What is XformCommonAPI?
+## What Is XformCommonAPI?
 `XformCommonAPI ` is a non-applied API schema of the OpenUSD framework. Today, we're diving into this API to understand its utility in the 3D content creation pipeline.
 
 This API facilitates the authoring and retrieval of a common set of operations with a single translation, rotation, scale and pivot that is generally compatible with import and export into many tools. It's designed to simplify the interchange of these transformations.

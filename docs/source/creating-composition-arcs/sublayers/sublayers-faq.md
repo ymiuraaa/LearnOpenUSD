@@ -3,7 +3,7 @@
 
 Before we continue, let’s talk about some common questions you may have about sublayers.
 
-## What is `subLayerPaths`?
+## What Is `subLayerPaths`?
 
 `subLayerPaths` is a property within the `Sdf` API. It is a list that contains all the sublayers in a Layer.
 

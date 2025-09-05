@@ -28,7 +28,7 @@ kernelspec:
 
 # Prim and Property Paths
 
-## What is a Path?
+## What Is a Path?
 In OpenUSD, a path represents the location of a prim or property within a scenegraph. The string representation for a prim path consists of a sequence of prim names separated by forward slashes (`/`), similar to file paths in a directory structure. The stage pseudo-root, which serves as the starting point for the hierarchy, is represented by a forward slash (`/`).
 
 For example, the path `/World/Geometry/Box` represents a prim named `Box` that is a child of a prim named `Geometry`, which is a child of the root prim named `World`.

@@ -1,6 +1,6 @@
 # Layers
 
-## What are Layers?
+## What Are Layers?
 ![](../images/foundations/layer_Definition.webm)
 
 OpenUSD scenes are organized into layers, whose contents can be combined or overridden to create a composed scene, with each layer containing a subset of the complete scene data (such as geometry, materials, or animations).
