@@ -7,7 +7,7 @@ In this lesson we’ll dive into the fundamental concepts of sublayers, which fo
 - Implement sublayers to organize USD content from multiple workstreams effectively.
 - Debug and troubleshoot sublayer composition using usdview’s *Layer Stack* view.
 
-In the following sections we will take a closer look at:
+In the following units we will take a closer look at:
 
 :::{toctree}
 :maxdepth: 1

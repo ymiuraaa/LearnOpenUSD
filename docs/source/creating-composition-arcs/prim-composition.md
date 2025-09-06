@@ -18,7 +18,7 @@ Prims are composed of `primSpecs` and `propertySpecs`.
 
 `PrimSpecs` and `propertySpecs` contain opinions about what the final composed prim should look like.
 
-Opinions (which is how we will generalize referring to Specs for this course) are the authored values that are stored in the `primSpec` and `propertySpec` in a particular layer.
+Opinions (which is how we will generalize referring to Specs for this module) are the authored values that are stored in the `primSpec` and `propertySpec` in a particular layer.
 
 ---
 

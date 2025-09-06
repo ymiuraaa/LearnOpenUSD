@@ -8,7 +8,7 @@ Throughout this lesson, we will:
 - Create and manipulate references and payloads using usdview and Python.
 - Analyze how references and payloads affect opinion strength and composition order in USD scenes. 
 
-These concepts are fundamental to creating efficient, scalable USD pipelines in various industries and will be covered in the following sections:
+These concepts are fundamental to creating efficient, scalable USD pipelines in various industries and will be covered in the following units:
 
 :::{toctree}
 :maxdepth: 1

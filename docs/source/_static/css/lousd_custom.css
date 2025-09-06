@@ -63,3 +63,10 @@ table.venv-setup {
 table.venv-setup .highlight-shell, .table.venv-setup .highlight-powershell {
     margin: 0;
 }
+
+.home-header > h1 {
+    background-image: url(/_static/learn-openusd-bbm-t@2x.jpg);
+    background-size: cover;
+    height: 100px;
+    padding-right: 50%;
+}

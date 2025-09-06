@@ -5,7 +5,7 @@
 
 ![](../../images/foundations/strength_ordering.png)
 
-Throughout this course, we’ve been talking about individual composition arcs and talking about how some are stronger or weaker than others. These arcs adhere to a set of strength ordering rules that we affectionately refer to as LIVRPS (pronounced “liver peas”), an acronym that captures the individual arcs according to their strength, with **local** opinions being the strongest and **specializes** arcs being the weakest.
+Throughout this module, we’ve been talking about individual composition arcs and talking about how some are stronger or weaker than others. These arcs adhere to a set of strength ordering rules that we affectionately refer to as LIVRPS (pronounced “liver peas”), an acronym that captures the individual arcs according to their strength, with **local** opinions being the strongest and **specializes** arcs being the weakest.
 
 The LIVRPS acronym captures all of the operations to compose data from layers onto the stage, in the order in which each operation is applied.
 

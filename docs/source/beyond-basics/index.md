@@ -27,7 +27,7 @@ These advanced techniques separate hobby projects from production pipelines. The
 
 ## What's Next
 
-These skills prepare you for the most advanced USD topics: creating custom schemas, building specialized tools, and architecting large-scale USD-based systems, which we'll cover in the intermediate Learn OpenUSD courses.
+These skills prepare you for the most advanced USD topics: creating custom schemas, building specialized tools, and architecting large-scale USD-based systems, which we'll cover in the intermediate Learn OpenUSD modules.
 
 :::{toctree}
 :maxdepth: 1

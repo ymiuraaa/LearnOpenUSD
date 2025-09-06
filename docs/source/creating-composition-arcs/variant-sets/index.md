@@ -7,7 +7,7 @@ Let's continue with the next lesson. In this lesson, *Variant Sets*, we’ll exp
 - Explore practical applications of variant sets in asset creation and scene composition.
 - Analyze how variant sets affect composition order in USD scenes.
 
-Let’s dive in and explore the versatility of variant sets in the following sections:
+Let’s dive in and explore the versatility of variant sets in the following units:
 
 :::{toctree}
 :maxdepth: 1

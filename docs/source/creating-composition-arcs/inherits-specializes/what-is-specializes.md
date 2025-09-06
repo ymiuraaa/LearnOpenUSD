@@ -10,5 +10,5 @@ The specialize arc is similar to the inherits arc, but provides the ability to b
 
 Specializes can be used like more traditional OOP (object-oriented programming) inheritance. Any spec authored as specializes can serve as a default and fallback. In OOP, objects that override their class members will ignore updates made to those class members. Conversely, objects that are still using the value defined by the class will fallback and reflect any runtime changes made to the class members.
 
-In the next section, *Experimenting with Specializes*, we will utilize a hands-on demonstration to better illustrate how the specialize arcs work.
+In the *Exercise: Experimenting with Specializes* unit we will utilize a hands-on demonstration to better illustrate how the specialize arcs work.
 

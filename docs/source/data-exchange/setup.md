@@ -10,7 +10,7 @@ This module includes interactive exercises to give you hands-on experience. This
 
 1. **Download** the required [*Developing Data Exchange Pipelines* exercise content](/_static/data-exchange-exercise-files.zip){.external}.
 2. **Extract** the folder.
-3. **Open** the root folder for the OpenUSD binaries in Visual Studio Code. We named this folder `usd_root/` in the above sections. If you have not installed usdview refer to [full installation instructions](../usdview-install-instructions.md).
+3. **Open** the root folder for the OpenUSD binaries in Visual Studio Code. We named this folder `usd_root/` when installing usdview. If you have not installed usdview refer to [full installation instructions](../usdview-install-instructions.md).
 4. **Copy** the extracted folder into `usd_root/` by dragging and dropping it into the *Explorer* section of Visual Studio Code. If prompted about adding the folder to the workspace, select **Copy Folder**.
 
 The folder we want to copy over is the `data_exchange` folder.
