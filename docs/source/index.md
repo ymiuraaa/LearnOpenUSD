@@ -39,12 +39,12 @@ Learn more
 
 ::::{grid} 1 1 3 3
 
-:::{grid-item-card} OpenUSD Developer Resources
+:::{grid-item-card} Developer Resources
 :link: https://developer.nvidia.com/usd
 Curated OpenUSD developer resources from NVIDIA and the OpenUSD ecosystem.
 :::
 
-:::{grid-item-card} NVIDIA OpenUSD Documentation
+:::{grid-item-card} NVIDIA OpenUSD Docs
 :link: https://docs.omniverse.nvidia.com/usd/latest/index.html
 OpenUSD documentation from NVIDIA.
 :::

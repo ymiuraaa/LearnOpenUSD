@@ -69,4 +69,5 @@ table.venv-setup .highlight-shell, .table.venv-setup .highlight-powershell {
     background-size: cover;
     height: 100px;
     padding-right: 50%;
+    color: black;
 }

@@ -29,7 +29,7 @@ kernelspec:
 
 In this lesson, we'll explore lights in OpenUSD, schemas belonging to the `UsdLux` domain. Understanding lights in OpenUSD allows for accurate and realistic lighting in 3D scenes.
 
-## What is UsdLux?
+## What Is UsdLux?
 
 ```{kaltura} 1_1ubiqm73
 ```
