@@ -6,6 +6,7 @@
 With the growing demand for USD expertise in complex 3D projects, accessible, high-quality training is more important than ever. This curriculum aims to democratize USD knowledge, establish best practices for 3D pipeline development, and empower both individuals and organizations to develop and validate their USD skills.
 
 :::::{grid} 1 1 2 2
+:gutter: 2
 
 ::::{grid-item-card} How to Contribute
 
@@ -38,6 +39,7 @@ Learn more
 ## Additional Resources
 
 ::::{grid} 1 1 3 3
+:gutter: 2
 
 :::{grid-item-card} Developer Resources
 :link: https://developer.nvidia.com/usd

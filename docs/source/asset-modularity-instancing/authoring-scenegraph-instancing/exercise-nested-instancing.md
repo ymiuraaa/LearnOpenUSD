@@ -3,8 +3,14 @@
 In this exercise, we will start with the instanced component assets and introduce nested instancing by enabling instancing for the entire rack assemblies. We will see how that impacts performance as well as authoring flexibility.
 
 1. **Run** in the terminal:
+
+Windows:
 ```powershell
-.\scripts\usdview.bat .\instancing_exercises\ex_sg_nested_inst\Scenario.usd --camera ExCam_01
+.\scripts\usdview.bat .\instancing\ex_sg_nested_inst\Scenario.usd --camera ExCam_01
+```
+Linux:
+```sh
+./scripts/usdview.sh ./instancing/ex_sg_nested_inst/Scenario.usd --camera ExCam_01
 ```
 
 ```{tip}
@@ -21,14 +27,26 @@ Note also the decals on the boxes. The boxes with decals showing form a T-shape 
 
 4. **Close** usdview.
 
-5. **Open** `instancing_exercises/ex_sg_nest/toggle_nested_inst.py` in VSCode to inspect its code.
+5. **Open** `instancing/ex_sg_nest/toggle_nested_inst.py` in VSCode to inspect its code.
 6. **Run** in the terminal:
+
+Windows:
 ```powershell
-python .\instancing_exercises\ex_sg_nested_inst\toggle_nested_inst.py 1
+python .\instancing\ex_sg_nested_inst\toggle_nested_inst.py 1
+```
+Linux:
+```sh
+python ./instancing/ex_sg_nested_inst/toggle_nested_inst.py 1
 ```
 7. **Run** in the terminal:
+
+Windows:
 ```powershell
-.\scripts\usdview.bat .\instancing_exercises\ex_sg_nested_inst\Scenario.usd --camera ExCam_01
+.\scripts\usdview.bat .\instancing\ex_sg_nested_inst\Scenario.usd --camera ExCam_01
+```
+Linux:
+```sh
+./scripts/usdview.sh ./instancing/ex_sg_nested_inst/Scenario.usd --camera ExCam_01
 ```
 
 Note that the Rack_BoxPallet prims are now instances.
@@ -57,8 +75,14 @@ Note that every pallet now has the same T-shape formation for box decals. The st
 11. **Close** usdview.
 
 12. **Run** in the terminal:
+
+Windows:
 ```powershell
-Measure-Command { .\scripts\usdview.bat .\instancing_exercises\ex_sg_nested_inst\Scenario.usd --quitAfterStartup }
+Measure-Command { .\scripts\usdview.bat .\instancing\ex_sg_nested_inst\Scenario.usd --quitAfterStartup }
+```
+Linux:
+```sh
+time ./scripts/usdview.sh ./instancing/ex_sg_nested_inst/Scenario.usd --quitAfterStartup
 ```
 
 This will measure how long it takes to execute usdview. usdview is an interactive app, but with the `--quitAfterStartup` flag we can just time the startup and time to first frame with the Storm renderer. You can run the command a few times and take an average for a more reliable result. My average was 5.31 seconds on a mid-end laptop. Let's compare my performance results of the different instancing strategies:

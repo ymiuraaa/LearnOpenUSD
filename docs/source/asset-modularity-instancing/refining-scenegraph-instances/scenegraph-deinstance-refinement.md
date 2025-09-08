@@ -21,8 +21,14 @@ Deinstancing is simple and convenient, but if you find yourself wanting to deins
 If we wanted to hide the decal on a box, a simple approach is to use de-instancing. We will lose some optimization in the process, but get back full editability for that copy of the box.
 
 1. **Run** in the terminal:
+
+Windows:
 ```powershell
-.\scripts\usdview.bat .\instancing_exercises\ex_sg_deinstance_refine\Scenario.usd  --camera ExCam_01
+.\scripts\usdview.bat .\instancing\ex_sg_deinstance_refine\Scenario.usd  --camera ExCam_01
+```
+Linux:
+```sh
+./scripts/usdview.sh ./instancing/ex_sg_deinstance_refine/Scenario.usd --camera ExCam_01
 ```
 
 ```{tip}

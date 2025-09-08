@@ -56,8 +56,14 @@ In this exercise, we will refine point instances in three ways:
 * Using primvars to add shading diversity.
 
 1. **Run** in the terminal:
+
+Windows:
 ```powershell
-.\scripts\usdview.bat .\instancing_exercises\ex_pt_refine\Scenario.usd --camera ExCam_01
+.\scripts\usdview.bat .\instancing\ex_pt_refine\Scenario.usd --camera ExCam_01
+```
+Linux:
+```sh
+./scripts/usdview.sh ./instancing/ex_pt_refine/Scenario.usd --camera ExCam_01
 ```
 
 ```{tip}

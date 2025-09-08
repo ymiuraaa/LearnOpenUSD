@@ -1,11 +1,19 @@
 # Exercise: Author Scenegraph Instancing
 
+## Introduction
+
 In this exercise, we will be enabling instancing on all of our component assets. We will observe the impact on the runtime data models and we will compare the startup time of usdview with and without instancing. While this will be an imperfect measurement of performance due to a number of variables that can come into play, it should at least indicate some improvement in performance when using instancing. For a more robust way to measure performance, we recommend the `usdmeasureperformance.py` script included with OpenUSD.
 
-
+## Exercise Steps
 1. **Run** in the terminal:
+
+Windows:
 ```powershell
-.\scripts\usdview.bat .\instancing_exercises\ex_sg_author_inst\Scenario.usd --camera ExCam_01
+.\scripts\usdview.bat .\instancing\ex_sg_author_inst\Scenario.usd --camera ExCam_01
+```
+Linux:
+```sh
+./scripts/usdview.sh ./instancing/ex_sg_author_inst/Scenario.usd --camera ExCam_01
 ```
 
 ```{tip}
@@ -40,21 +48,39 @@ Instancing | - | - | -
 5. **Close** usdview.
 
 6. **Run** in the terminal:
+
+Windows:
 ```powershell
-Measure-Command { .\scripts\usdview.bat .\instancing_exercises\ex_sg_author_inst\Scenario.usd --quitAfterStartup }
+Measure-Command { .\scripts\usdview.bat .\instancing\ex_sg_author_inst\Scenario.usd --quitAfterStartup }
+```
+Linux:
+```sh
+time ./scripts/usdview.sh ./instancing/ex_sg_author_inst/Scenario.usd --quitAfterStartup
 ```
 
 This will measure how long it takes to execute usdview. usdview is an interactive app, but with the `--quitAfterStartup` flag we can just time the startup and time to first frame with the Storm renderer. You can run the command a few times and take an average for a more reliable result. My average was 27.77 seconds on a mid-end laptop.
 
-7. **Open** `instancing_exercises/ex_sg_author_inst/toggle_inst.py` in VSCode to inspect its code.
+7. **Open** `instancing/ex_sg_author_inst/toggle_inst.py` in VSCode to inspect its code.
 8. **Run** in the terminal:
+
+Windows:
 ```powershell
-python .\instancing_exercises\ex_sg_author_inst\toggle_inst.py 1
+python .\instancing\ex_sg_author_inst\toggle_inst.py 1
+```
+Linux:
+```sh
+python ./instancing/ex_sg_author_inst/toggle_inst.py 1
 ```
 
 9. **Run** in the terminal:
+
+Windows:
 ```powershell
-.\scripts\usdview.bat .\instancing_exercises\ex_sg_author_inst\Scenario.usd --camera ExCam_01
+.\scripts\usdview.bat .\instancing\ex_sg_author_inst\Scenario.usd --camera ExCam_01
+```
+Linux:
+```sh
+./scripts/usdview.sh ./instancing/ex_sg_author_inst/Scenario.usd --camera ExCam_01
 ```
 Note that the component assets in Tree View now have light blue text.
 
@@ -98,8 +124,14 @@ Instancing | 1711 | 1450 | 3
 16. **Close** usdview.
 
 17. **Run** in the terminal:
+
+Windows:
 ```powershell
-Measure-Command { .\scripts\usdview.bat .\instancing_exercises\ex_sg_author_inst\Scenario.usd --quitAfterStartup }
+Measure-Command { .\scripts\usdview.bat .\instancing\ex_sg_author_inst\Scenario.usd --quitAfterStartup }
+```
+Linux:
+```sh
+time ./scripts/usdview.sh ./instancing/ex_sg_author_inst/Scenario.usd --quitAfterStartup
 ```
 
 This will measure how long it takes to execute usdview. My average was 18.98 seconds on a mid-end laptop. That's roughly a **46.3% speed up** to render the first frame with usdview and the Storm renderer.
@@ -108,3 +140,5 @@ Scenario | Execution Time (sec) | Improvement (%)
 ---|---|---
 No Instancing | 27.77 | 0% (Baseline)
 Instancing | 18.98 | +31.7%
+
+## Conclusion

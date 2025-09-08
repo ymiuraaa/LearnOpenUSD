@@ -69,8 +69,14 @@ In this example, we are setting `primvars:arm_color` on the instanceable prim to
 In this exercise, we're going to use a custom "cleanness" primvar that we authored for our box asset to control the brightness of the box's cardboard material. In simulation, we could use this as a visual representation of how long a box has been in the warehouse. An older box would appear dirtier or darker than the rest. This would enable us to quickly scan our digital twin and find boxes that have been sitting around for a long time.
 
 1. **Run** in the terminal:
+
+Windows:
 ```powershell
-.\scripts\usdview.bat .\instancing_exercises\ex_sg_primvar_refine\Scenario.usd --camera ExCam_01
+.\scripts\usdview.bat .\instancing\ex_sg_primvar_refine\Scenario.usd --camera ExCam_01
+```
+Linux:
+```sh
+./scripts/usdview.sh ./instancing/ex_sg_primvar_refine/Scenario.usd --camera ExCam_01
 ```
 
 ```{tip}

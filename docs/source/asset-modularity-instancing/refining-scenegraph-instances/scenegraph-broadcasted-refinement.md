@@ -18,8 +18,14 @@ In this scenario, all the boxes on a pallet were damaged. We want to label all t
 
 
 1. **Run** in the terminal:
+
+Windows:
 ```powershell
-.\scripts\usdview.bat .\instancing_exercises\ex_sg_broadcasted_refine\Scenario.usd --camera ExCam_01
+.\scripts\usdview.bat .\instancing\ex_sg_broadcasted_refine\Scenario.usd --camera ExCam_01
+```
+Linux:
+```sh
+./scripts/usdview.sh ./instancing/ex_sg_broadcasted_refine/Scenario.usd --camera ExCam_01
 ```
 
 ```{tip}

@@ -34,9 +34,16 @@ All exercises will assume Visual Studio Code is open in the `usd_root/`. See vid
 These instructions will guide you in setting up some default settings in usdview to avoid inconsistencies and confusion during the usdview exercises.
 
 1. **Run** in the terminal:
+
+Windows:
 ```powershell
-.\scripts\usdview.bat .\instancing_exercises\ex_assets_overview\AssetsLineup.usd
+.\scripts\usdview.bat .\instancing\ex_assets_overview\AssetsLineup.usd
 ```
+Linux:
+```sh
+./scripts/usdview.sh ./instancing/ex_assets_overview/AssetsLineup.usd
+```
+
 2. In the Viewport panel, **toggle on** only *Lights > Enable Default Dome Light*.
 
 The lighting options in the *Lights* menu to look like this:

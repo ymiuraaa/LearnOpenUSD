@@ -17,8 +17,14 @@ In your factory, every box going down the line transitions from an open state to
 We will use variant sets to add a shipping label decal to a box. This is a standard part of our shipping and receiving workflow so our asset already has a variant set to handle that.
 
 1. **Run** in the terminal:
+
+Windows:
 ```powershell
-.\scripts\usdview.bat .\instancing_exercises\ex_sg_varset_refine\Scenario.usd  --camera ExCam_01
+.\scripts\usdview.bat .\instancing\ex_sg_varset_refine\Scenario.usd  --camera ExCam_01
+```
+Linux:
+```sh
+./scripts/usdview.sh ./instancing/ex_sg_varset_refine/Scenario.usd --camera ExCam_01
 ```
 
 ```{tip}

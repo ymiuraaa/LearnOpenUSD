@@ -18,13 +18,19 @@ If you don't foresee a lot of instances leveraging the new ad hoc composition ar
 
 In this exercise, we'll simulate a box that was damaged in the warehouse. We'll add a "Damaged" stamp on a couple of boxes box while maintaining instancing enabled for them.
 
-1. **Open** `instancing_exercises/src_assets/Assets/Utilities/MiscDecals/MiscDecals.usd` in VSCode to inspect the USDA.
+1. **Open** `instancing/src_assets/Assets/Utilities/MiscDecals/MiscDecals.usd` in VSCode to inspect the USDA.
 
 `/_MixinOverrides/DamagedStamp` is a speculative over (override) that introduces a new decal Mesh and Material for the "Damaged" stamp. This is a bit hard-coded to position the stamp perfectly on the "CubeBox_A04_26cm" asset, but it could be designed to be used more modularly so it could be applied to all sort of assets. We're going to use this layer as a reference to refine our boxes as an additional ad-hoc composition arc.
 
 2. **Run** in the terminal:
+
+Windows:
 ```powershell
-.\scripts\usdview.bat .\instancing_exercises\ex_sg_add_arc_refine\Scenario.usd --camera ExCam_01
+.\scripts\usdview.bat .\instancing\ex_sg_add_arc_refine\Scenario.usd --camera ExCam_01
+```
+Linux:
+```sh
+./scripts/usdview.sh ./instancing/ex_sg_add_arc_refine/Scenario.usd --camera ExCam_01
 ```
 
 ```{tip}

@@ -132,8 +132,14 @@ Before getting into the different scenegraph instance refinement techniques, let
 ### Immutability of Instance Proxies
 
 1. **Run** in the terminal:
+
+Windows:
 ```powershell
-.\scripts\usdview.bat .\instancing_exercises\ex_sg_editability\Scenario.usd --camera ExCam_01
+.\scripts\usdview.bat .\instancing\ex_sg_editability\Scenario.usd --camera ExCam_01
+```
+Linux:
+```sh
+./scripts/usdview.sh ./instancing/ex_sg_editability/Scenario.usd --camera ExCam_01
 ```
 
 ```{tip}
