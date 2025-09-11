@@ -76,7 +76,7 @@ asset-modularity-instancing/index
 :::
 
 :::{toctree}
-:caption: Prerequisites
+:caption: Common Resources
 :maxdepth: 2
 :hidden:
 
