@@ -30,7 +30,7 @@ Linux:
 python ./instancing/ex_pt_author/author_point_instancer.py
 ```
 
-You shouldn't notice any additional output in the terminal or file system. We wil open up `Scenario.usd` in usdview to see what the script did.
+You shouldn't notice any additional output in the terminal or file system. We will open up `Scenario.usd` in usdview to see what the script did.
 
 ## Viewing the Point Instancer Results
 

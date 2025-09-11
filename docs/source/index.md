@@ -15,7 +15,7 @@ This curriculum is open-sourced on Github and will continue to expand and evolve
 :::{button-link} https://github.com/NVIDIA-Omniverse/LearnOpenUSD
 :color: primary
 :shadow:
-Contribute 
+Contribute
 :::
 
 ::::
