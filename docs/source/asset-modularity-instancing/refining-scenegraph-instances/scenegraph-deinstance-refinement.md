@@ -18,7 +18,15 @@ Deinstancing is simple and convenient, but if you find yourself wanting to deins
 
 ## Exercise: Deinstance Refinement
 
-If we wanted to hide the decal on a box, a simple approach is to use de-instancing. We will lose some optimization in the process, but get back full editability for that copy of the box.
+### Introduction
+
+In this exercise, you will learn the simplest refinement technique: deinstancing. You'll disable instancing on specific instanceable prims to regain full editability, then observe how this affects stage statistics. This approach trades some optimization for complete control over individual instances.
+
+We will pretend we've been asked to hide the decal on box similar to [Exercise: Instance Editability](./scenegraph-instance-refinement.md#exercise-instance-editability), but this time we will apply the override successfully using deinstance refinement.
+
+### Deinstancing a Single Instance
+
+If we wanted to hide the decal on a box, a simple approach is to use deinstancing. We will lose some optimization in the process, but get back full editability for that copy of the box.
 
 1. **Run** in the terminal:
 
@@ -49,7 +57,11 @@ decal_vis = decal.GetAttribute("visibility")
 decal_vis.Set(UsdGeom.Tokens.invisible)
 ```
 
-This code de-instanced the cube box asset we selected by setting the instanceable metadata to false. We were then able to edit the child decal prim to hide it without any problems. You box should look like this now with the hidden decal:
+```{tip}
+usdview has a special `UsdViewApi` object--accessible from `usdviewApi` in the Interpreter window--that gives us convenient context-aware access to our selections. 
+```
+
+In Step 2, we selected the instanceable prim we want to deistance. We can get a `Usd.Prim` object for our selection using `usdviewApi.prim`. This code deinstanced the cube box asset by setting `instanceable = false`. We were then able to edit the child decal prim to hide it without any problems. Your box should look like this now with the hidden decal:
 
 ![](../../images/asset-modularity-instancing//hidden-decal.png)
 
@@ -60,12 +72,18 @@ stats = UsdUtils.ComputeUsdStageStats(usdviewApi.stage)
 pprint(stats)
 ```
 
-The downside is that we are introducing more total prims by using less instancing. Here's a summarized comparison:
+The trade-off is that we are introducing more total prims by using less instancing. Here's a summarized comparison:
 
 Scenario | Prims | Instances | Prototypes 
 ---|---|---|---
 Instancing | 1711 | 1450 | 3
-1 De-instanced Box | 1741 | 1449 | 3
+1 Deinstanced Box | 1741 | 1449 | 3
+
+This is reasonable if you need to make a small amount of targeted edits to instances. It's simple and convenient. If we need to make broader, sweeping changing, then some of the other refinement technique may be better suited.
+
+Let's deinstance another instanceable prim to see how that impacts the stage statistics.
+
+### Deinstancing Multiple Instances
 
 Let's say we needed to make changes to more boxes. Let's apply the same decal visibility change to another box.
 
@@ -93,14 +111,20 @@ stats = UsdUtils.ComputeUsdStageStats(usdviewApi.stage)
 pprint(stats)
 ```
 
-The more we de-instance, the more optimizations we lose. Here's a summarized comparison:
+The more we deinstance, the more optimizations we lose. Here's a summarized comparison:
 
 Scenario | Prims | Instances | Prototypes 
 ---|---|---|---
 Instancing | 1711 | 1450 | 3
-1 De-instanced Box | 1741 | 1449 | 3
-2 De-instanced Boxes | 1771 | 1448 | 3
+1 Deinstanced Box | 1741 | 1449 | 3
+2 Deinstanced Boxes | 1771 | 1448 | 3
 
-While simple and convenient, this refinement approach is significantly more unoptimized than others if you are making identical refinements to more than one asset. The next refinement examples will show more optimal approaches to achieve the same.
+You can see that the complexity scales linearly the more box assets that we deinstance. This will vary though depending on the variety and complexity of the assets you deinstance.
+
+For identical overrides like we've applied on these two boxes, it would be more optimal for OpenUSD to create a new prototype that could be share by the decal-less boxes. In the next units, we will learn about other refinement techniques that do just that.
 
 9. **Close** usdview.
+
+### Conclusion
+
+You've successfully learned deinstancing refinement, the simplest technique for gaining full editability over specific instances. While this approach trades some performance optimization for complete control, you've seen how it enables precise modifications to individual repeated assets when needed, making it ideal for unique cases requiring detailed customization.

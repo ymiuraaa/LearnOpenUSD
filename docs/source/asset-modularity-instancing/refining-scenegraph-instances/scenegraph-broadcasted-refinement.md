@@ -14,8 +14,13 @@ In this example, both robot arms in "WorkCell_02" inherit from `/Warehouse/WorkC
 
 ## Exercise: Broadcasted Refinement
 
-In this scenario, all the boxes on a pallet were damaged. We want to label all the boxes with the "Damaged" stamp. We could add a new arc to all the affected boxes one by one, but for this example, we're going to use a specialize arc to broadcast the change to all of the boxes on the pallet.
+### Introduction
 
+In this exercise, you will learn broadcasted refinement, a powerful technique that leverages inherits and specializes arcs to efficiently apply changes to multiple instances simultaneously. You'll use a specialize arc to broadcast damage stamps to all boxes on a pallet, observe how this creates a new prototype, and understand the efficiency benefits of this approach compared to individual instance modifications.
+
+### Exploring the Specialize Arc Structure
+
+In this scenario, all the boxes on a pallet were damaged. We want to label all the boxes with the "Damaged" stamp. We could add a new arc to all the affected boxes one by one, but for this example, we're going to use a specialize arc to broadcast the change to all of the boxes on the pallet.
 
 1. **Run** in the terminal:
 
@@ -38,7 +43,7 @@ Linux:
 
 3. **Press** the "<span>&#92;</span>" key to select the enclosing model.
 
-This will select the "BoxPallet_A01" assembly.
+This will select the next model up the prim hierarchy, a "BoxPallet_A01" assembly.
 
 ![](../../images/asset-modularity-instancing//select-pallet-assembly.png)
 
@@ -50,7 +55,9 @@ You should see "BoxPallet_A01_03" selected in the Tree View panel.
 
 ![](../../images/asset-modularity-instancing//reveal-specialize-target.png)
 
-Notice that there is a prim "_PalletBox" enclosed within the "BoxPallet_A01" asset. This is a class prim included as specialize arc target for every box on that pallet. We can author opinions in "_PalletBox" that will be applied to all boxes on that pallet.
+Notice that there is a prim "_PalletBox" enclosed within the "BoxPallet_A01" asset. This is a class prim included as a specialize arc target for every box on that pallet. We can author opinions in "_PalletBox" that will be applied to all boxes on that pallet.
+
+### Applying Broadcasted Refinement
 
 6. **Click** *Window > Interpreter* to open the Interpreter window.
 7. **Run** the following code in the Interpreter window:
@@ -65,7 +72,9 @@ prim.GetReferences().AddReference(str(decals_path), "/_MixinOverrides/DamagedSta
 
 ![](../../images/asset-modularity-instancing/damaged-pallet.png)
 
-Notice how all the boxes on the pallet closest to the camera now show a stamp that says, "Damaged". In this case, we added the same reference as in the [Ad-Hoc Composition Arc Addition Refinement](./scenegraph-ad-hoc-arcs-refinement.md) exercise, but this could also have been direct opinions authored in the `/World/Warehouse/Rack_BoxPallet_A01_01/BoxPallet_A01_03/_PalletBox` of this layer. We authored one opinion that rippled changes to all the boxes.
+Notice how all the boxes on the pallet closest to the camera now show a stamp that says, "Damaged". In this case, we added the same reference as in the [Ad Hoc Composition Arc Addition Refinement](./scenegraph-ad-hoc-arcs-refinement.md) exercise, but this could also have been direct opinions authored in the `/World/Warehouse/Rack_BoxPallet_A01_01/BoxPallet_A01_03/_PalletBox` of this layer. We authored one opinion that rippled changes to all the boxes.
+
+### Analyzing the Impact on Stage Statistics
 
 8. **Run** the following code in the Interpreter window:
 ```python
@@ -81,4 +90,17 @@ Scenario | Prims | Instances | Prototypes
 Instancing | 1711 | 1450 | 3
 Broadcasted Refinement | 1747 | 1450 | 4
 
+**Key observations:**
+- The prim count increased by 36 prims (from 1711 to 1747)
+- The instance count remained the same (1450)
+- A new prototype was created (from 3 to 4 prototypes)
+- All boxes on the pallet now share the same new prototype with the damage stamp
+- This approach is more efficient than adding individual references to each box
+
+Broadcasted refinement is most beneficial when you need to apply the same modification to multiple instances that share a common specialize or inherit target.
+
 9. **Close** usdview.
+
+### Conclusion
+
+You've successfully learned broadcasted refinement, a powerful technique that leverages inherits and specializes arcs to efficiently apply changes to multiple instances simultaneously. By authoring a single opinion on a shared target, you can broadcast modifications to all instances that inherit or specialize from that target, making this approach ideal for bulk modifications across related instances.

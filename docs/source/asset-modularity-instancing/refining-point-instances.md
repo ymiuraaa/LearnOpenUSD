@@ -50,10 +50,11 @@ In this example, maybe we're creating a commercial and we want to turn a packing
 
 ## Exercise: Refining Point Instances
 
-In this exercise, we will refine point instances in three ways:
-* Deactivating an instance to prune it.
-* Promoting an instance to a fully editable asset.
-* Using primvars to add shading diversity.
+### Introduction
+
+In this exercise, you will learn three key techniques for refining point instances: deactivating instances to prune them, promoting instances to fully editable assets, and using primvars to add shading diversity. You'll explore how these techniques allow you to introduce variety and control into your PointInstancer while maintaining performance benefits, giving you the flexibility to customize individual instances when needed.
+
+### Exploring the Point Instancer Scenario
 
 1. **Run** in the terminal:
 
@@ -70,9 +71,11 @@ Linux:
 **Click** *Camera > Select Camera > ExCam_01* if you ever lose your place in the scene or want to get back to this camera position.
 ```
 
-In the horizontal center of the Viewport, there is a box just in front of a pallet. This is the point that we want to prune. We know ahead of time that this is index 1228 in our PointInstancer arrays.
+In the horizontal center of the Viewport, there is a box just in front of a pallet. This is the point that we want to prune. We know ahead of time that this is index `1228` in our PointInstancer arrays.
 
 ![](../images/asset-modularity-instancing/to-prune.png)
+
+### Deactivating Point Instances
 
 2. **Click** *Window > Interpreter* to open the Interpreter window.
 3. **Run** the following code in the Interpreter window:
@@ -87,7 +90,9 @@ pi.DeactivateId(1228)
 
 You should notice that the box we called out disappeared. This code deactivates the given ID from the PointInstancer. This authors metadata on the PointInstancer that indicates that the given point should be pruned entirely.
 
-What if we didn't want to prune this point, but wanted to promote it instead into a fully editable asset. Promotion starts with pruning, but then you replace the pruned point with the full asset. Let's run some code to reference a new asset and place it in the same place as our pruned point.
+### Promoting Point Instances
+
+What if we didn't want to prune this point, but wanted to promote it instead into a fully editable asset. Promotion starts with pruning, but then you replace the pruned point with the full asset. Let's run some code to reference a new asset and place it in the same place as our pruned point. We will continue with point `1228` for this part.
 
 4. **Run** the following code in the Interpreter window:
 ```python
@@ -105,7 +110,9 @@ The box looks just like it did before in the Viewport, but now we have a new pri
 
 ![](../images/asset-modularity-instancing/promotion.png)
 
-Now let's look at a third refinement option using primvars. In this case, we're going to use `primvars:cleanness` to change how clean each of the scattered boxes are.
+### Using Primvars for Shading Diversity
+
+Now let's look at a third refinement option using primvars. In this case, we're going to use `primvars:cleanness` this is a custom primvar that we created for the CubeBox_A04_26cm asset ahead of time. It's the same primvar used for [Exercise: Hierarchical Refinement Using Primvars](./refining-scenegraph-instances/scenegraph-hierarchical-refinement.md#exercise-hierarchical-refinement-using-primvars) to change how clean a box appears.
 
 5. **Run** the following code in the Interpreter window:
 ```python
@@ -117,7 +124,14 @@ cleanness.Set([random.uniform(0.3,1) for x in range(2000)])
 
 This code creates `primvars:cleanness` on our PointInstancer, but it uses "vertex" for the variability. What this means is that each item in our array will be assigned to a different PointInstancer point. We're using the `random` library to set 2000 random values.
 
-But nothing changed in the viewport. This is because primvars are inherited, but only if a value hasn't been set by a descendant. The descendant opinion on the prototype that we referenced is stronger than ancestor opinion of the PointInstancer. Fortunately, we can block the prototypes opinion to complete our task.
+But nothing changed in the viewport. This is because primvars are inherited, but only if a value hasn't been set by a descendant. The descendant opinion on the prototype that we referenced is stronger than ancestor opinion of the PointInstancer. 
+
+* World
+  * Scatter (weaker)
+    * Prototypes
+      * CubeBox_A04_26cm (stronger)
+
+Fortunately, we can block the prototype's opinion to complete our task.
 
 ![](../images/asset-modularity-instancing/blocking-opinion.png)
 
@@ -129,4 +143,10 @@ box_proto.GetAttribute("primvars:cleanness").Block()
 
 ![](../images/asset-modularity-instancing/pi-primvar.png)
 
+Now you should see the varying degrees of dirtiness on the scattered boxes.
+
 7. **Close** usdview.
+
+### Conclusion
+
+You've successfully learned three key techniques for refining point instances: deactivating instances to prune them, promoting instances to fully editable assets, and using primvars to add shading diversity. These techniques give you the flexibility to customize individual instances when needed while maintaining the performance benefits of PointInstancer, making it an ideal solution for large-scale scenes that require both efficiency and control.

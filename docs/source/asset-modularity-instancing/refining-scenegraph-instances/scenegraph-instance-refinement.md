@@ -114,7 +114,6 @@ Not necessarily. OpenUSD offers a lot of flexibility so you can't have the best 
 
 By using refinement, you can build large, diverse scenes, but still leverage instancing wherever possible.
 
-% TODO: Align the refinement terms
 In the following lessons we will explore some common techniques for downstream refinement of instances:
 * Deinstancing
 * Hierarchical Refinement
@@ -129,7 +128,15 @@ Before getting into the different scenegraph instance refinement techniques, let
 
 ## Exercise: Instance Editability
 
+### Introduction
+
+In this exercise, you will explore the fundamental rules of instance editability by attempting to modify different types of prims in an instanced scene. You'll discover which prims can be edited, which cannot, and understand why these restrictions exist for optimal performance in USD workflows. 
+
 ### Immutability of Instance Proxies
+
+We will pretend we've been asked to remove the decal from a box to represent a different type of box in our digital twin. Normally, you might create a new asset or variant set within the asset, but we will go with the naive approach of making the change in our aggregated scene. We are starting from a state where the component models are already instanced.
+
+Let's start by opening the warehouse scenario. 
 
 1. **Run** in the terminal:
 
@@ -152,12 +159,12 @@ Linux:
 
 3. Hover your mouse over the Tree View panel and **press** the "F" key to frame the selected prim in the Tree View.
 
-You should see "CubeBox_A04_26cm_18" selected in the Tree View panel.
+You should see "CubeBox_A04_26cm_18" selected in the Tree View panel. This is an **instanceable prim**.
 
 4. **Click** the triangle to the left of the select prim in the Tree View to expand the select prim's hierarchy.
 5. **Click** on "SM_CubeBox_A04_Decal_01" that was revealed in the Tree View.
 
-We've decided that this box should not have any decals. We want to hide the decals on this box. This is an instance proxy though as denoted by the dark blue text. We'll see what happens when we try to author this change.
+We've decided that this box should not have any decals. We want to hide the decals on the box. This is an **instance proxy** though as denoted by the dark blue text. We'll see what happens when we try to author this change.
 
 6. In the Property panel, **click** on the "visibility" attribute.
 
@@ -171,6 +178,12 @@ vis = usdviewApi.property
 vis.Set(UsdGeom.Tokens.invisible)
 ```
 
+```{tip}
+usdview has a special `UsdViewApi` object--accessible from `usdviewApi` in the Interpreter window--that gives us convenient context-aware access to our selections. 
+```
+
+In Step 6, we selected the "visibility" attribute. We can get a `Usd.Attribute` object for that attribute using `usdviewApi.property`. Then, we can try setting it to `invisible`.
+
 You should see an error like this in the Interpreter window:
 
 ```shell
@@ -181,16 +194,23 @@ pxr.Tf.ErrorException:
 	Error in 'pxrInternal_v0_25_5__pxrReserved__::UsdStage::_SetValueImpl' at line 7102 in file C:\g\163073426\USD\pxr\usd\usd\stage.cpp : 'Cannot set attribute value.  Failed to create attribute spec </World/Warehouse/Rack_BoxPallet_A01_01/BoxPallet_A01_03/CubeBox_A04_26cm_18/SM_CubeBox_A04_Decal_01.visibility> in layer @anon:0000020B75F5EAE0@'
 ```
 
-The decal prim is a instance proxy which makes it immutable. OpenUSD outputs an error explaining that we can't author a local opinion to change the visibility of the decal prim.
+The decal prim is a **instance proxy** which makes it **immutable**. OpenUSD outputs an error explaining that we can't author a local opinion to change the visibility of the decal prim.
 
-Instances are not entirely immutable though. Instance prims (i.e. the root prim of an instance) can be edited. This is what allows scenegraph instances to have unique transformations in the scene. Let's look at how instance prims can be mutated.
+Instances are not entirely immutable though. Instanceable prims (i.e. the root prim of an instance) can be edited. This is what allows scenegraph instances to have unique transformations in the scene. Let's look at how instanceable prims can be mutated.
 
 ### Mutability of Instance Prims
 
 9. **Click** on "CubeBox_A04_26cm_18" in the Tree View.
-10. In the Property panel, **click** on the "xformOp:translate" attribute.
+
+This is the **instanceable prim**
+
+10. In the Property panel, **click** on the `xformOp:translate` attribute.
 
 ![](../../images/asset-modularity-instancing//select-translate.png)
+
+This attribute on the instanceable prim has a unique value compared to all of the other boxes on this pallet and the prim has a unique computed world space position compared to all other prims on this stage. This mutability of the instanceable prim is key for the transformation of instances, but it has other useful benefits as we'll see in the following units.
+
+Let's override the `xformOp:translate` attribute to further drive this point home.
 
 11. **Run** the following code in the Interpreter window:
 ```python
@@ -203,8 +223,10 @@ translate.Set((x, y, z+20.0))
 
 Note how the box moved up 20 units in the viewport and it didn't produce any errors.
 
-This component-based instancing scheme enables us to benefit from instancing, but we can still perform tasks like removing and moving instanced boxes within our shipping and receiving warehouse. You can author other opinions on the instance prim to control things like visibility or activation of a prim.
+This component-based instancing scheme enables us to benefit from instancing, but we can still perform tasks like removing and moving instanced boxes within our shipping and receiving warehouse. You can author other opinions on the instanceable prim to control things like visibility or activation of a prim.
 
 12. **Close** usdview.
 
+### Conclusion
 
+You've successfully demonstrated the three key rules of instance editability: prototypes and instance proxies are immutable, while instanceable prims remain editable. This understanding forms the foundation for learning refinement techniques that allow you to introduce variety into instanced scenes while maintaining performance benefits.

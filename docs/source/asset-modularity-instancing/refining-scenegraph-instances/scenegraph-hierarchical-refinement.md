@@ -66,6 +66,12 @@ In this example, we are setting `primvars:arm_color` on the instanceable prim to
 
 ## Exercise: Hierarchical Refinement Using Primvars
 
+### Introduction
+
+In this exercise, you will learn hierarchical refinement using primvars, an efficient refinement technique that introduces variety without creating new prototypes. You'll use a custom "cleanness" primvar to control material appearance, observe how primvars inherit through the prim hierarchy, and understand why this approach has minimal performance impact while enabling extensive visual variety.
+
+### Understanding the Custom Primvar
+
 In this exercise, we're going to use a custom "cleanness" primvar that we authored for our box asset to control the brightness of the box's cardboard material. In simulation, we could use this as a visual representation of how long a box has been in the warehouse. An older box would appear dirtier or darker than the rest. This would enable us to quickly scan our digital twin and find boxes that have been sitting around for a long time.
 
 1. **Run** in the terminal:
@@ -98,14 +104,18 @@ You should see "CubeBox_A04_26cm_18" selected in the Tree View panel.
 
 ![](../../images/asset-modularity-instancing//primvar-reader.png)
 
-This shader is used by all boxes to check for "primvars:cleanness" on any gprim (e.g. Mesh or Subset) that it's assigned to.
+This shader is used by all boxes to check for `primvars:cleanness` on any gprim (e.g. Mesh or Subset) that it's assigned to.
 
 8. **Click** on "UsdPreviewSurface" to select it.
 9. **Click** on the triangle to the left of the "inputs:occlusion" attribute in the Property panel expand it.
 
 ![](../../images/asset-modularity-instancing//occlusion.png)
 
-This reveals that the output from "UsdPrimvarReader_cleanness" is connected to "inputs:occlusion" to drive the occlusion of this cardboard material. The closer the number gets to "0.0", the darker the material gets.
+This reveals that the output from "UsdPrimvarReader_cleanness" is connected to "inputs:occlusion" to drive the occlusion of this cardboard material. The closer the number gets to `0.0`, the darker the material gets.
+
+### Setting Primvar Values
+
+Let's see the custom primvar in action on our instanced boxes.
 
 10. **Click** *Window > Interpreter* to open the Interpreter window.
 11. **Run** the following code in the Interpreter window:
@@ -117,8 +127,10 @@ box1.GetAttribute("primvars:cleanness").Set([0.8])
 box2.GetAttribute("primvars:cleanness").Set([0.6])
 ```
 
-Note how the two boxes closes to the camera are now darker from the rest.
+Note how the two boxes closest to the camera are now darker from the rest.
 ![](../../images/asset-modularity-instancing//cleanness-set.png)
+
+### Analyzing the Impact Using Stage Statistics
 
 12. **Run** the following code in the Interpreter window:
 ```python
@@ -134,6 +146,16 @@ Scenario | Prims | Instances | Prototypes
 Instancing | 1711 | 1450 | 3
 Primvar Refinement | 1711 | 1450 | 3
 
-Primvar refinement does not add any prims to the total prim count. All we are doing is authoring a new opinion on the instance prims that are already a part of the total prim count. No new prototypes are created either. The single prototype handles all of the shading variability on its own.
+**Key observations:**
+- Primvar refinement does not add any prims to the total prim count
+- All we are doing is authoring a new opinion on the instanceable prims that are already a part of the total prim count
+- No new prototypes are created either
+- The single prototype handles all of the shading variability on its own
+
+This makes primvars a very efficient refinement technique for introducing visual variety.
 
 13. **Close** usdview.
+
+### Conclusion
+
+You've successfully leveraged hierarchical refinement using primvars, an efficient technique for introducing variety into instanced scenes. By leveraging primvars and material networks, you can create extensive visual diversity without any performance penalty, making this approach ideal for large-scale scenes requiring subtle variations.

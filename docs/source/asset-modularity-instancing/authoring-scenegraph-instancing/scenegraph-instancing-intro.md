@@ -169,4 +169,6 @@ OpenUSD basically says that's great that you want to instance these, but I'm not
 
 That's why it's important to understand the difference between edits on a local layer stack versus edits through composition arcs.
 
-% TODO: Key takeaways
+## Key Takeaways
+
+Scenegraph instancing in OpenUSD provides a powerful optimization technique for large-scale scenes by creating shared prototypes from repeated subgraphs. The `instanceable` metadata enables this functionality, allowing OpenUSD to automatically generate implicit prototypes from explicit instances based on composition arcs. Understanding the key terms—prototypes, instances, instanceable prims, and instance proxies—is essential for effectively implementing and managing scenegraph instancing in production workflows.

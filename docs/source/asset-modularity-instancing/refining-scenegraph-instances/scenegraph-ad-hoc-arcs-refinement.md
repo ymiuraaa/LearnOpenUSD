@@ -16,11 +16,26 @@ If you don't foresee a lot of instances leveraging the new ad hoc composition ar
 
 ## Exercise: Ad Hoc Arcs Refinement
 
-In this exercise, we'll simulate a box that was damaged in the warehouse. We'll add a "Damaged" stamp on a couple of boxes box while maintaining instancing enabled for them.
+### Introduction
+
+In this exercise, you will learn ad hoc arcs refinement, a technique that adds new composition arcs to instanceable prims to introduce variety while preserving instancing benefits. You'll add stamps boxes with the word "Damaged" using internal references, observe how this creates new prototypes, and understand when this approach is most beneficial compared to other refinement techniques.
+
+### Exploring the Damaged Stamp Asset
+
+In this exercise, we'll simulate a box that was damaged in the warehouse. We'll add a "Damaged" stamp on a couple of boxes while maintaining instancing enabled for them.
 
 1. **Open** `instancing/src_assets/Assets/Utilities/MiscDecals/MiscDecals.usd` in VSCode to inspect the USDA.
 
-`/_MixinOverrides/DamagedStamp` is a speculative over (override) that introduces a new decal Mesh and Material for the "Damaged" stamp. This is a bit hard-coded to position the stamp perfectly on the "CubeBox_A04_26cm" asset, but it could be designed to be used more modularly so it could be applied to all sort of assets. We're going to use this layer as a reference to refine our boxes as an additional ad-hoc composition arc.
+```{literalinclude} ../../exercise_content/instancing/src_assets/Assets/Utilities/MiscDecals/MiscDecals.usd
+:caption: MiscDecals.usd
+:language: usda
+:emphasize-lines: 11
+:linenos:
+```
+
+`/_MixinOverrides/DamagedStamp` is a speculative `over` (override) that introduces a new decal Mesh and Material for the "Damaged" stamp. This is a bit hard-coded to position the stamp perfectly on the "CubeBox_A04_26cm" asset, but it could be designed to be used more modularly so it could be applied to all sorts of assets. We're going to use this layer as a reference to refine our boxes as an additional ad hoc composition arc.
+
+### Adding Ad Hoc Composition Arcs
 
 2. **Run** in the terminal:
 
@@ -50,9 +65,13 @@ box1.GetReferences().AddReference(str(decals_path), "/_MixinOverrides/DamagedSta
 box2.GetReferences().AddReference(str(decals_path), "/_MixinOverrides/DamagedStamp")
 ```
 
+This code overrides the top first and second boxes on the pallet closest to the camera by adding a new reference to `MiscDecals.usd` on the instanceable prim.
+
 Notice how the top first and second box on the pallet closest to the camera now show a stamp that says, "Damaged".
 
 ![](../../images/asset-modularity-instancing/ad-hoc-damaged.png)
+
+### Analyzing the Impact on Stage Statistics
 
 5. **Run** the following code in the Interpreter window:
 ```python
@@ -68,6 +87,17 @@ Scenario | Prims | Instances | Prototypes
 Instancing | 1711 | 1450 | 3
 Ad-hoc Arc Refinement | 1741 | 1450 | 4
 
-Because prototypes are built off of composition arcs, introducing a new composition arc to an instance triggers the creation of a new prototype with the modifications that we defined in the new arc.
+**Key observations:**
+- The prim count increased by 30 prims (from 1711 to 1741)
+- The instance count remained the same (1450)
+- A new prototype was created (from 3 to 4 prototypes)
+- Because prototypes are built off of composition arcs, introducing a new composition arc to an instance triggers the creation of a new prototype with the modifications that we defined in the new arc
+- The new prototype is shared by the two boxes we overrode.
+
+This technique is most beneficial when you have many instances that will use the same ad hoc composition arc.
 
 6. **Close** usdview.
+
+### Conclusion
+
+You've successfully learned ad hoc arcs refinement, a technique that adds new composition arcs to instanceable prims to introduce variety while preserving instancing benefits. This approach is most effective when you have multiple instances that will share the same override, as it creates new prototypes that can be reused efficiently across similar instances.

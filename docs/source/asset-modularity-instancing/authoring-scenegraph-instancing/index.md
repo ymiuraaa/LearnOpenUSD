@@ -1,8 +1,16 @@
 # Authoring Scenegraph Instancing
 
-In this lesson, insert lesson description. Here’s what we’ll accomplish:
+In this lesson, you'll learn how to create and manage scenegraph instances in USD, including enabling instancing and implementing nested instancing hierarchies. Here's what we'll accomplish:
 
-* insert goals
+## Learning Objectives
+
+By the end of this lesson, you'll be able to:
+
+* **Explain** how scenegraph instancing works in USD and its relationship to the composition system
+* **Create** scenegraph instances by enabling the `instanceable` metadata on prims
+* **Analyze** stage statistics to understand the performance impact of instancing
+* **Implement** nested instancing hierarchies for complex scene structures
+* **Compare** the trade-offs between instancing performance and authoring flexibility
 
 Here is an outline for this lesson:
 
