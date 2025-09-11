@@ -3,7 +3,7 @@
 
 **Learn OpenUSD** is a free, open-source learning path designed to help you master the skills required to build efficient 3D workflows with OpenUSD (Universal Scene Description).
 
-With the growing demand for USD expertise in complex 3D projects, accessible, high-quality training is more important than ever. This curriculum aims to democratize USD knowledge, establish best practices for 3D pipeline development, and empower both individuals and organizations to develop and validate their USD skills.
+With the growing demand for USD expertise in complex 3D projects, comprehensive training is more important than ever. This curriculum aims to democratize USD knowledge, establish best practices for 3D pipeline development, and empower both individuals and organizations to develop and validate their USD skills.
 
 :::::{grid} 1 1 2 2
 :gutter: 2
@@ -15,14 +15,14 @@ This curriculum is open-sourced on Github and will continue to expand and evolve
 :::{button-link} https://github.com/NVIDIA-Omniverse/LearnOpenUSD
 :color: primary
 :shadow:
-Contribute
+Contribute 
 :::
 
 ::::
 
-::::{grid-item-card} Why Get Certified?
+::::{grid-item-card} Why Get Certified
 
-The Learn OpenUSD learning path is designed to prepare you directly for the OpenUSD Developer Certification exam—ensuring you gain real-world, in-demand skills and are ready for industry-recognized credentials.
+This learning path is designed to prepare you directly for the **OpenUSD Development Certification** exam—ensuring you gain real-world, in-demand skills and are ready for industry-recognized credentials.
 +++
 :::{button-ref} why-openusd-developer-certification
 :color: primary
@@ -64,7 +64,7 @@ The official OpenUSD documentation.
 
 Overview <self>
 what-openusd/index
-Why Get Certified? <why-openusd-developer-certification>
+Why Get Certified <why-openusd-developer-certification>
 stage-setting/index
 scene-description-blueprints/index
 composition-basics/index

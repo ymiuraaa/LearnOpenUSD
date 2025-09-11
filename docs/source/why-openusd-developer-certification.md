@@ -12,7 +12,7 @@ Teams working on unified 3D projects need standardized workflows, strong pipelin
 
 **Not everyone is building USD scenes the right way.**
 
-OpenUSD is an open ecosystem with almost unlimited possibilities - you can do almost anything - so it’s natural that there are a lot of ways you can do things wrong (or at least wrong enough to cause headaches later on). If your team lacks unified standards, expect costly inefficiencies, sloppy structures, and bad processes.
+OpenUSD is an open ecosystem with almost unlimited possibilities - you can do almost anything - so it’s natural that there are a lot of ways you can do things wrong (or at least wrong enough to cause headaches later on). If your team lacks unified standards, you should expect costly inefficiencies, sloppy structures, and bad processes.
 
 **Pipeline developers are essential.**
 

@@ -25,5 +25,3 @@ OpenUSD acts as a common language between different 3D applications, allowing da
 ## Getting Started
 
 The Learn OpenUSD learning path will guide you through OpenUSD's concepts step by step, starting with the fundamental building blocks and progressing to advanced composition techniques. Each lesson includes practical examples and Python code samples to help you apply these concepts in your own projects.
-
-Ready to dive in? Let's start by setting the stage with OpenUSD's core components.

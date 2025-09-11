@@ -62,6 +62,8 @@ exclude_patterns = ['_includes/**']
 myst_enable_extensions = ['colon_fence', 'html_image', 'attrs_inline', 'attrs_block']
 myst_title_to_header = True
 myst_number_code_blocks = ['python', 'py', 'usda', 'usd']
+myst_links_external_new_tab = True
+myst_heading_anchors = 3
 nb_number_source_lines = True
 nb_execution_mode = "cache"
 
