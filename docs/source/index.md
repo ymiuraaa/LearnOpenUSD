@@ -82,3 +82,13 @@ asset-modularity-instancing/index
 
 usdview-install-instructions
 :::
+
+:::{toctree}
+:caption: Get Involved
+:maxdepth: 2
+:hidden:
+
+Contribute <https://github.com/NVIDIA-Omniverse/LearnOpenUSD>
+Report an Issue <https://github.com/NVIDIA-Omniverse/LearnOpenUSD/issues/new>
+Join the Community <https://forum.aousd.org>
+:::
