@@ -25,6 +25,10 @@ Linux:
 ./scripts/usdview.sh ./instancing/ex_sg_author_inst/Scenario.usd --camera ExCam_01
 ```
 
+```{note}
+This time we launched usdview with `--camera ExCam_01`. This automatically selects the Camera prim named "ExCam_01" as the active camera for the viewport.
+```
+
 ```{tip}
 **Click** *Camera > Select Camera > ExCam_01* if you ever lose your place in the scene or want to get back to this camera position.
 ```

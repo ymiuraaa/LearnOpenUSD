@@ -129,7 +129,7 @@ Scenegraph instancing should be thought of as an opportunity for optimization, b
 
 Instance proxies provide a convenient way for end users to see what an instance is made up of without having to follow the indirection from instance to prototype. 
 
-Additionally, a script or a tool that reads OpenUSD data and is not performance sensitive can ignore instancing altogher. You can basically enable traversal of instance proxies and read the OpenUSD data as if instancing was not enabled. You don't get the performance benefits, but avoid some added complexity in your script.
+Additionally, a script or a tool that reads OpenUSD data and is not performance sensitive can ignore instancing altogether. You can basically enable traversal of instance proxies and read the OpenUSD data as if instancing was not enabled. You don't get the performance benefits, but avoid some added complexity in your script.
 
 ## Examples
 

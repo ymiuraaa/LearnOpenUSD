@@ -19,7 +19,7 @@ Here we have a "scenario.usd" which is broken down into facility.usd and "elemen
 ![](../../images/asset-modularity-instancing/layer-stacks-composition-arcs.mp4)
 
 The facility sublayer is using composition arcs to compose a warehouse onto the USD stage. The elements sublayer is composing various references of the rack asset onto the stage.​
-​
+
 Together, OpenUSD composition arcs and layer stacks are the fundamental mechanisms that enable the creation and management of complex 3D scenes.​
 
 When learning OpenUSD, we don't always distinguish between layer stacks and arcs. They're often grouped together as composition operators.  Distinguishing the operations becomes important when trying to develop advanced understanding of topics like instancing, as basically the behavior of instancing depends on this distinction.
@@ -68,7 +68,7 @@ If you change the underlying asset once, all uses are instantly updated. If we n
 
 **System Performance**
 
-There is a system performance benefit to this--t's not just workflow improvements. If you’re running dozens of scenarios and they all use the same robot and factory, the scenarios benefit from sharing of system resources like storage and memory. The precise benefits will vary depending on your system, asset resolver, and file format, but the benefits will be scoped to the cost of layer operations.
+There is a system performance benefit to this--it's not just workflow improvements. If you’re running dozens of scenarios and they all use the same robot and factory, the scenarios benefit from sharing of system resources like storage and memory. The precise benefits will vary depending on your system, asset resolver, and file format, but the benefits will be scoped to the cost of layer operations.
 
 ### Enabling Asset Catalogs and Libraries
 
