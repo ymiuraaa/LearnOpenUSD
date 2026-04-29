@@ -93,7 +93,7 @@ NVIDIA OpenUSD-related MCP servers (deployable on your own infrastructure):
 ## Kit Runtime Performance
 
 - Avoid large USDA files for production assets; under OVRTX, also avoid USDZ. Both can increase {term}`stage <Stage>` open times.
-  - USDA is ASCII-formatted USD and is best reserved for smaller assembly files and debugging. For production assets, prefer binary `USDC` because it is smaller and faster to parse. See [Maximizing USD Performance](https://openusd.org/release/maxperf.html) `[OpenUSD]` for general OpenUSD performance guidance.
+  - USDA is human-readable USD and is best reserved for smaller assembly files and debugging. For production assets, prefer binary `USDC` because it is smaller and faster to parse. See [Maximizing USD Performance](https://openusd.org/release/maxperf.html) `[OpenUSD]` for general OpenUSD performance guidance.
   - USDZ itself is an uncompressed zip archive of USD + textures, designed for random access — load behavior is consumer-dependent. OVRTX's current load paths front-load all materials and textures and bypass runtime caches, which can increase load times and hurt performance, especially in cloud environments. Other Hydra renderers may behave differently.
   - [More information on OpenUSD file formats](./stage-setting/usd-file-formats.md) `[NVIDIA]`
 - Enable the UJITSO extension (`--enable omni.ujitso.client`) and configure DDCS caching to reduce stage open times. `[NVIDIA, Kit]`
