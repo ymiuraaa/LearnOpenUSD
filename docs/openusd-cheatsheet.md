@@ -12,14 +12,23 @@ Use this page as a single-page entrypoint for OpenUSD learning, validation, opti
 
 ## How Do I Validate My OpenUSD?
 
-Validating OpenUSD {term}`assets <Asset>` can fix structural and compatibility issues early. Invalid OpenUSD assets can result in assets that do not load, render, or perform as expected.
+Validating OpenUSD {term}`assets <Asset>` can fix structural and compatibility issues early. Validation is layered — different tools cover different layers (mapped from buildingSMART's 4-layer validation model):
 
-- [What Is Asset Validation?](./data-exchange/asset-validation/what-is-asset-validation.md)
+**Syntax / Schema** — *Is this even valid USD?*
+- [`usdchecker`](https://openusd.org/release/toolset.html#usdchecker) — OpenUSD's primary CLI validator
+- [UsdValidation framework](https://openusd.org/release/api/md_pxr_usd_validation_usd_validation__r_e_a_d_m_e.html) — programmatic validation API (the engine `usdchecker` uses; replaces the deprecated `UsdUtils.ComplianceChecker`)
+
+**Normative rules** — *Does this meet domain/vertical requirements?*
 - [VFI: OpenUSD Validation](https://docs.omniverse.nvidia.com/vfi/latest/guide/usd-validation.html)
 - [Asset Validator for Kit](https://docs.omniverse.nvidia.com/kit/docs/asset-validator/latest/index.html)
 - [Validation outside of Kit via USD Exchange SDK](https://docs.omniverse.nvidia.com/usd/code-docs/usd-exchange-sdk/latest/docs/devtools.html)
+
+**Best practices** — *Is this content good for its intended use?*
+- See the Optimization and Best Practices sections below
+
+**Learn more**
+- [What Is Asset Validation?](./data-exchange/asset-validation/what-is-asset-validation.md)
 - [Beyond the Basics: OpenUSD for Advanced Physical AI Simulation](https://www.youtube.com/watch?v=LWCU_HXXzck)
-- [PXR: OpenUSD Validation Docs](https://openusd.org/release/api/md_pxr_usd_validation_usd_validation__r_e_a_d_m_e.html)
 
 ## How Do I Optimize My OpenUSD?
 
