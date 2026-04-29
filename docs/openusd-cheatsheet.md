@@ -66,9 +66,9 @@ Current models (GPT 5, Opus 4) do a decent job of handling OpenUSD topics and qu
 
 ## Kit Runtime Performance
 
-- Avoid USDZ and large USDA files to reduce {term}`stage <Stage>` open times.
-  - USDZ front-loads all materials and textures and skips runtime caches, which can increase load times and hurt performance, especially in cloud environments.
-  - USDA is ASCII-formatted USD and is best reserved for smaller assembly files and debugging. For production assets, prefer binary `USDC` when possible because it is smaller and faster to parse.
+- Avoid large USDA files for production assets; under OVRTX, also avoid USDZ. Both can increase {term}`stage <Stage>` open times.
+  - USDA is ASCII-formatted USD and is best reserved for smaller assembly files and debugging. For production assets, prefer binary `USDC` because it is smaller and faster to parse. See [Maximizing USD Performance](https://openusd.org/release/maxperf.html) for general OpenUSD performance guidance.
+  - USDZ itself is an uncompressed zip archive of USD + textures, designed for random access — load behavior is consumer-dependent. OVRTX's current load paths front-load all materials and textures and bypass runtime caches, which can increase load times and hurt performance, especially in cloud environments. Other Hydra renderers may behave differently.
   - [More information on OpenUSD file formats](./stage-setting/usd-file-formats.md)
 - Enable the UJITSO extension (`--enable omni.ujitso.client`) and configure DDCS caching to reduce stage open times.
   - [UJITSO + Derived Data Cache System](https://docs.omniverse.nvidia.com/materials-and-rendering/latest/ujitso.html)
