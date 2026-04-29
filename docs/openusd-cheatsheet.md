@@ -66,9 +66,9 @@ Optimizing OpenUSD assets can improve load time and runtime rendering performanc
 
 ## SimReady
 
-Simulation-ready, or "SimReady," is NVIDIA's specification and ecosystem for physically accurate 3D assets and digital twins that incorporate real-world properties, behaviors, and data bindings, such as physics.
+Simulation-ready, or "SimReady," is a specification and ecosystem for physically accurate 3D assets and digital twins — those that incorporate real-world properties, behaviors, and data bindings such as physics. Currently NVIDIA-led, designed to evolve toward multi-vendor adoption and shared industry standards. The intent: simulation-vertical requirements that are shared and validatable across the ecosystem, not vendor-private.
 
-Built on Universal Scene Description (OpenUSD), simulation-ready assets are essential for advanced simulation and training physical AI in industrial, robotics, and autonomous systems.
+Built on Universal Scene Description (OpenUSD), simulation-ready assets are foundational for advanced simulation and training physical AI in industrial, robotics, and autonomous systems.
 
 - [Omniverse SimReady](https://docs.omniverse.nvidia.com/simready/latest/overview.html) `[NVIDIA]`
 - [Glossary: SimReady](https://www.nvidia.com/en-us/glossary/simready/) `[NVIDIA]`
