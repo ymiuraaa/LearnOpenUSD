@@ -38,8 +38,15 @@ Learn more
 
 ## Additional Resources
 
-::::{grid} 1 1 3 3
+::::{grid} 1 1 2 4
 :gutter: 2
+
+:::{grid-item-card} OpenUSD Cheatsheet
+:link: openusd-cheatsheet
+:link-type: doc
+
+A single-page entrypoint for OpenUSD learning, validation, optimization, performance, and ecosystem resources.
+:::
 
 :::{grid-item-card} Developer Resources
 :link: https://developer.nvidia.com/usd
@@ -82,6 +89,7 @@ asset-modularity-instancing/index
 
 Glossary <glossary>
 Interactive Glossary <interactive-glossary>
+OpenUSD Cheatsheet <openusd-cheatsheet>
 usdview-install-instructions
 install-usda-syntax
 jupyter-notebook-setup
